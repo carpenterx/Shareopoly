@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TileClick : MonoBehaviour
+public class PropertyClick : MonoBehaviour
 {
     public TextMesh nameMesh;
     public TextMesh costMesh;
