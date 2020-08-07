@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ChanceClick : MonoBehaviour
 {
@@ -10,8 +11,11 @@ public class ChanceClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        nameMesh.text = "Community\nChest";
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            nameMesh.text = "Community\nChest";
 
-        backgroundRenderer.color = Color.white;
+            backgroundRenderer.color = Color.white;
+        }
     }
 }

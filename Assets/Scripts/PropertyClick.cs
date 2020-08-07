@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PropertyClick : MonoBehaviour
 {
@@ -9,10 +10,14 @@ public class PropertyClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        nameMesh.text = "Park Place";
-        costMesh.text = "$200";
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            nameMesh.text = "Park Place";
+            costMesh.text = "$200";
 
-        topRenderer.color = Color.blue;
+            topRenderer.color = Color.blue;
+        }
+            
     }
 
 }

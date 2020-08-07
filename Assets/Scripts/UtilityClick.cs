@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UtilityClick : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class UtilityClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        nameMesh.text = "King Cross\nStation";
-        costMesh.text = "$150";
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            nameMesh.text = "King Cross\nStation";
+            costMesh.text = "$150";
 
-        backgroundRenderer.color = Color.white;
+            backgroundRenderer.color = Color.white;
+        }
     }
 }
