@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraScroll : MonoBehaviour
 {
@@ -25,27 +26,30 @@ public class CameraScroll : MonoBehaviour
 
     void Update()
     {
-        Vector3 cameraPosition = transform.position;
-        if (Input.mousePosition.x > theScreenWidth - boundary)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            cameraPosition.x = Mathf.Min(endX, cameraPosition.x + (speed * Time.deltaTime));
-        }
+            Vector3 cameraPosition = transform.position;
+            if (Input.mousePosition.x > theScreenWidth - boundary)
+            {
+                cameraPosition.x = Mathf.Min(endX, cameraPosition.x + (speed * Time.deltaTime));
+            }
 
-        if (Input.mousePosition.x < 0 + boundary)
-        {
-            cameraPosition.x = Mathf.Max(startX, cameraPosition.x - (speed * Time.deltaTime));
-        }
+            if (Input.mousePosition.x < 0 + boundary)
+            {
+                cameraPosition.x = Mathf.Max(startX, cameraPosition.x - (speed * Time.deltaTime));
+            }
 
-        if (Input.mousePosition.y > theScreenHeight - boundary)
-        {
-            cameraPosition.y = Mathf.Min(endY, cameraPosition.y + (speed * Time.deltaTime));
-        }
+            if (Input.mousePosition.y > theScreenHeight - boundary)
+            {
+                cameraPosition.y = Mathf.Min(endY, cameraPosition.y + (speed * Time.deltaTime));
+            }
 
-        if (Input.mousePosition.y < 0 + boundary)
-        {
-            cameraPosition.y = Mathf.Max(startY, cameraPosition.y - (speed * Time.deltaTime));
-        }
+            if (Input.mousePosition.y < 0 + boundary)
+            {
+                cameraPosition.y = Mathf.Max(startY, cameraPosition.y - (speed * Time.deltaTime));
+            }
 
-        transform.position = cameraPosition;
+            transform.position = cameraPosition;
+        }
     }
 }
