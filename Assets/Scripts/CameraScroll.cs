@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CameraScroll : MonoBehaviour
@@ -13,7 +14,6 @@ public class CameraScroll : MonoBehaviour
     private float endX;
     private float endY;
 
- 
     void Start()
     {
         theScreenWidth = Screen.width;
@@ -50,6 +50,31 @@ public class CameraScroll : MonoBehaviour
             }
 
             transform.position = cameraPosition;
+        }
+    }
+
+    public IEnumerator ScrollToPlayer(Transform playerTransform)
+    {
+        float targetX = Mathf.Clamp(playerTransform.position.x, startX, endX);
+        float targetY = Mathf.Clamp(playerTransform.position.y, startY, endY);
+        
+        float t = 0.0f;
+        Vector3 startingPos = transform.position;
+        Vector3 targetPosition = new Vector3(targetX, targetY, transform.position.z);
+        float transitionTime;
+        if(Vector3.Magnitude(startingPos + targetPosition) < 60)
+        {
+            transitionTime = 0.5f;
+        }
+        else
+        {
+            transitionTime = 1f;
+        }
+        while(t < transitionTime)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector3.Lerp(startingPos, targetPosition, t);
+            yield return null;
         }
     }
 }

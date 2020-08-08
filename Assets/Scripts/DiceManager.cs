@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DiceManager : MonoBehaviour
@@ -8,8 +9,11 @@ public class DiceManager : MonoBehaviour
     public GameObject player;
     public GameObject tilesHolder;
 
+    public CameraScroll cameraScroll;
+
     private List<Transform> tileList = new List<Transform>();
     private int curentTileIndex = 0;
+    private IEnumerator cameraTransition;
 
     void Start()
     {
@@ -51,5 +55,13 @@ public class DiceManager : MonoBehaviour
     {
         player.transform.position = tileList[tileIndex].transform.position;
         player.transform.rotation = tileList[tileIndex].transform.rotation;
+        
+        if (cameraTransition != null)
+        {
+            StopCoroutine(cameraTransition);
+            //cameraTransition = StartCoroutine(cameraScroll.ScrollToPlayer(player.transform));
+        }
+        cameraTransition = cameraScroll.ScrollToPlayer(player.transform);
+        StartCoroutine(cameraTransition);
     }
 }
