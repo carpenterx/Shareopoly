@@ -12,6 +12,6 @@ public class DiceManager : MonoBehaviour
         {
             totalRoll += dice.Roll();
         }
-        Debug.Log("Rolled: " + totalRoll);
+        //Debug.Log("Rolled: " + totalRoll);
     }
 }
