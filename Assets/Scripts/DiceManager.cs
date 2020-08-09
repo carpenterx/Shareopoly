@@ -18,7 +18,6 @@ public class DiceManager : MonoBehaviour
     void Start()
     {
         GenerateTileList();
-        PlacePlayerOnTile();
     }
 
     private void GenerateTileList()
