@@ -58,7 +58,6 @@ public class DiceManager : MonoBehaviour
         if (cameraTransition != null)
         {
             StopCoroutine(cameraTransition);
-            //cameraTransition = StartCoroutine(cameraScroll.ScrollToPlayer(player.transform));
         }
         cameraTransition = cameraScroll.ScrollToPlayer(player.transform);
         StartCoroutine(cameraTransition);
