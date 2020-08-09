@@ -18,9 +18,9 @@ public class CameraScroll : MonoBehaviour
     {
         theScreenWidth = Screen.width;
         theScreenHeight = Screen.height;
-        startX = transform.position.x;
+        endX = transform.position.x;
         startY = transform.position.y;
-        endX = startX + 38;
+        startX = endX - 38;
         endY = startY + 46;
     }
 
