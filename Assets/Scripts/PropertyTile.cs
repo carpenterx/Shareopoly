@@ -1,14 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PropertyClick : MonoBehaviour
+public class PropertyTile : MonoBehaviour
 {
+    public PropertyScriptableObject tileData;
+
     public TextMesh nameMesh;
     public TextMesh costMesh;
 
     public SpriteRenderer topRenderer;
 
-    private void OnMouseDown()
+    private void Start()
+    {
+        if(tileData)
+        {
+            topRenderer.color = tileData.propertyColor;
+
+            nameMesh.text = tileData.tileText;
+            costMesh.text = tileData.costText;
+        }
+    }
+
+    /*private void OnMouseDown()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
@@ -18,5 +31,5 @@ public class PropertyClick : MonoBehaviour
             topRenderer.color = Color.blue;
         }
             
-    }
+    }*/
 }

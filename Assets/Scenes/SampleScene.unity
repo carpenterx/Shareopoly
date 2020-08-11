@@ -988,6 +988,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3398108375416210700, guid: 746ac78974b53cc45a3e71b9338a1b35,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: 442fe48035838ac4b99f63124e8616a9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746ac78974b53cc45a3e71b9338a1b35, type: 3}
 --- !u!4 &501719187 stripped
@@ -1338,6 +1344,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3398108375416210700, guid: 746ac78974b53cc45a3e71b9338a1b35,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ccd58c20f455cf4fbfba1ac02659f8b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746ac78974b53cc45a3e71b9338a1b35, type: 3}
 --- !u!1001 &707936667
@@ -1749,6 +1761,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1308910179}
     m_Modifications:
+    - target: {fileID: 4640450482364866818, guid: d48cc6475943c5646ab6723f446d44df,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: c235e13a114b6da47abc5790f7ecd858,
+        type: 2}
     - target: {fileID: 9172343870080810481, guid: d48cc6475943c5646ab6723f446d44df,
         type: 3}
       propertyPath: m_Name
@@ -1829,6 +1847,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1308910179}
     m_Modifications:
+    - target: {fileID: 4315788182665996498, guid: 3193bb740bfe03c44837034a65996672,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e170db288b186c4ab1bd372a25a2c74,
+        type: 2}
     - target: {fileID: 7521773266185816140, guid: 3193bb740bfe03c44837034a65996672,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3017,6 +3041,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3398108375416210700, guid: 746ac78974b53cc45a3e71b9338a1b35,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: fef67e3b91d4508419b7bc918a12f6b0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746ac78974b53cc45a3e71b9338a1b35, type: 3}
 --- !u!1001 &1560895785
@@ -3830,6 +3860,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Game Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 8725523108033320525, guid: 0da72e980dd73904dab2c85558d90914,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: 35453262954ddc24b9b17f793cbd8e70,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0da72e980dd73904dab2c85558d90914, type: 3}
 --- !u!1001 &1895387887
@@ -4091,6 +4127,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1308910179}
     m_Modifications:
+    - target: {fileID: 4640450482364866818, guid: d48cc6475943c5646ab6723f446d44df,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: b679a0c0a74a295479cdb6eb044cccd7,
+        type: 2}
     - target: {fileID: 9172343870080810481, guid: d48cc6475943c5646ab6723f446d44df,
         type: 3}
       propertyPath: m_Name
@@ -4315,5 +4357,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3398108375416210700, guid: 746ac78974b53cc45a3e71b9338a1b35,
+        type: 3}
+      propertyPath: tileData
+      value: 
+      objectReference: {fileID: 11400000, guid: ca3f1ba9d120d544d8326ffac510ad41,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746ac78974b53cc45a3e71b9338a1b35, type: 3}

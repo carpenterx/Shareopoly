@@ -1,12 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CornerClick : MonoBehaviour
+public class SquareTile : MonoBehaviour
 {
+    public PropertyScriptableObject tileData;
     public GameObject textHolder;
     public TextMesh textMesh;
 
-    private void OnMouseDown()
+    private void Start()
+    {
+        if(tileData)
+        {
+            textMesh.text = tileData.tileText;
+        }
+    }
+
+    /*private void OnMouseDown()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
@@ -15,5 +24,5 @@ public class CornerClick : MonoBehaviour
             textHolder.transform.rotation = rotation;
             textMesh.text = "PASS GO\nCollect $200";
         }
-    }
+    }*/
 }

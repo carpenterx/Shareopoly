@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ChanceClick : MonoBehaviour
+public class ChanceTile : MonoBehaviour
 {
+    public ChanceScriptableObject tileData;
+
     public TextMesh nameMesh;
 
     public SpriteRenderer backgroundRenderer;
 
-    private void OnMouseDown()
+    private void Start()
+    {
+        if(tileData)
+        {
+            nameMesh.text = tileData.tileText;
+        }
+    }
+
+    /*private void OnMouseDown()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
@@ -17,5 +27,5 @@ public class ChanceClick : MonoBehaviour
 
             backgroundRenderer.color = Color.white;
         }
-    }
+    }*/
 }

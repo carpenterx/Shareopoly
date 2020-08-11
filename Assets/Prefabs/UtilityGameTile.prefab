@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d1cc248ed98109746ac6b435742cc3f9, type: 3}
-  m_Color: {r: 0.25663045, g: 0.745283, b: 0.7153801, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -506,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6240e71d812ebad43954417c5f83202b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileData: {fileID: 0}
   nameMesh: {fileID: 7521773264346015529}
   costMesh: {fileID: 7521773264354390787}
   backgroundRenderer: {fileID: 9129704821796566734}
