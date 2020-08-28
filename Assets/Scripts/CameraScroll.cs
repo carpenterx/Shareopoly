@@ -25,10 +25,6 @@ public class CameraScroll : MonoBehaviour
         endX = Mathf.Max(transform.position.x, transform.position.x + horizontalOffset);
         startY = Mathf.Min(transform.position.y, transform.position.y + verticalOffset);
         endY = Mathf.Max(transform.position.y, transform.position.y + verticalOffset);
-        /*endX = transform.position.x;
-        startY = transform.position.y;
-        startX = endX - 38;
-        endY = startY + 46;*/
     }
 
     void Update()
