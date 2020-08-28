@@ -1049,6 +1049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundary: 20
   speed: 20
+  horizontalOffset: -38
+  verticalOffset: 46
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
