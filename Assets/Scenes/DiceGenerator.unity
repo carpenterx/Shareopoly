@@ -151,11 +151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0be13094aa2f8a418d14a976ecd7617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batchName: blue
-  circlesColor: {r: 1, g: 1, b: 1, a: 1}
-  faceColor: {r: 0.15284525, g: 0.13705944, b: 0.8301887, a: 1}
-  shadowColor: {r: 0.10752635, g: 0.09714311, b: 0.5566038, a: 1}
-  borderColor: {r: 0.15806337, g: 0.44553655, b: 0.9056604, a: 1}
+  pixelsPerUnit: 68
+  gradientResolution: 128
+  batchName: white-grey
+  startValue: 1
+  endValue: 6
+  circlesColor: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 1}
+  faceColor: {r: 1, g: 1, b: 1, a: 1}
+  shadowColor: {r: 0.93333334, g: 0.93333334, b: 0.93333334, a: 1}
+  borderColor: {r: 0.5137255, g: 0.5137255, b: 0.5137255, a: 1}
 --- !u!212 &1279127898
 SpriteRenderer:
   m_ObjectHideFlags: 0

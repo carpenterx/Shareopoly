@@ -6,7 +6,13 @@ using UnityEditor;
 
 public class DiceGenerator : MonoBehaviour
 {
+    public float pixelsPerUnit = 0.6f;
+    public ushort gradientResolution = 64;
+
+    [Space]
     public string batchName = "";
+    public int startValue = 1;
+    public int endValue = 6;
     public Color circlesColor;
 
     [Space]
@@ -50,9 +56,9 @@ public class DiceGenerator : MonoBehaviour
 
     private void GenerateAssets()
     {
-        for (int i = 1; i <= 6; i++)
+        for (int i = startValue; i <= endValue; i++)
         {
-            UpdateSprite(i);
+            GenerateSprite(i);
         }
     }
 
@@ -61,7 +67,7 @@ public class DiceGenerator : MonoBehaviour
         GameObject.Destroy(GetComponent<SpriteRenderer>().sprite);
     }
 
-    private void UpdateSprite(int dieValue)
+    private void GenerateSprite(int dieValue)
     {
         var tessOptions = new VectorUtils.TessellationOptions()
         {
@@ -80,7 +86,7 @@ public class DiceGenerator : MonoBehaviour
         var geoms = VectorUtils.TessellateScene(sceneInfo.Scene, tessOptions);
 
         // Build a sprite with the tessellated geometry.
-        var sprite = VectorUtils.BuildSprite(geoms, 6.0f, VectorUtils.Alignment.Center, Vector2.zero, 64, true);
+        var sprite = VectorUtils.BuildSprite(geoms, pixelsPerUnit, VectorUtils.Alignment.Center, Vector2.zero, gradientResolution, true);
         GetComponent<SpriteRenderer>().sprite = sprite;
         SaveSprite(sprite, dieValue);
     }
@@ -98,7 +104,7 @@ public class DiceGenerator : MonoBehaviour
 
     private void ColorCircles(int diceValue, Color fillColor)
     {
-        if(diceValue>0 && diceValue<7)
+        if(diceValue>=0 && diceValue<7)
         {
             string diceString = GetDiceString(diceValue);
             for (int i = 0; i < 7; i++)
@@ -122,6 +128,9 @@ public class DiceGenerator : MonoBehaviour
         string diceString = "";
         switch (diceValue)
         {
+            case 0:
+                diceString = "0000000";
+                break;
             case 1:
                 diceString = "0001000";
                 break;
