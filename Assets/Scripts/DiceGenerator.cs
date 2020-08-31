@@ -102,6 +102,16 @@ public class DiceGenerator : MonoBehaviour
         shape.Fill = new SolidFill() { Color = new Color(color.r, color.g, color.b, color.a) };
     }
 
+    /*private void ColorShape(string shapeID, Color color, bool dashed)
+    {
+        var shape = sceneInfo.NodeIDs[shapeID].Shapes[0];
+        shape.Fill = new SolidFill() { Color = new Color(color.r, color.g, color.b, 0) };
+        shape.PathProps = new PathProperties()
+        {
+            Stroke = new Stroke() { Color = Color.black, HalfThickness = 2f, Pattern = new float[] { 8f, 4f } }
+        };
+    }*/
+
     private void ColorCircles(int diceValue, Color fillColor)
     {
         if(diceValue>=0 && diceValue<7)
