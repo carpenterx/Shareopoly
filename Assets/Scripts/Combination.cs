@@ -6,6 +6,8 @@ public class Combination : MonoBehaviour
     public CombinationScriptableObject combinationData;
 
     public TextMesh nameMesh;
+    public SpriteRenderer backgroundSprite;
+    private bool wasUsed = false;
     public List<SpriteRenderer> combinationDice;
 
     [Space]
@@ -26,7 +28,17 @@ public class Combination : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // calculate score based on selected combination and dice rolls
-        scoreKeeper.CalculateScore(diceManager.GetDiceRolls(), combinationData.combinationName);
+        if(!wasUsed)
+        {
+            // calculate score based on selected combination and dice rolls
+            scoreKeeper.CalculateScore(diceManager.GetDiceRolls(), combinationData.combinationName);
+        }
+        DisableCombination();
+    }
+
+    private void DisableCombination()
+    {
+        backgroundSprite.color = Color.gray;
+        wasUsed = true;
     }
 }
