@@ -6,11 +6,32 @@ public class DiceSprite : MonoBehaviour
     public List<Sprite> faceSprites;
 
     public SpriteRenderer spriteRenderer;
+
+    private static string DROP_ZONE_TAG = "DropZone";
+
+    private bool isDraggable = true;
     private bool isBeingDragged = false;
+    private bool isInsideDropZone = false;
 
     private void Start()
     {
         Roll();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == DROP_ZONE_TAG)
+        {
+            isInsideDropZone = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == DROP_ZONE_TAG)
+        {
+            isInsideDropZone = false;
+        }
     }
 
     private void OnMouseDown()
@@ -22,11 +43,15 @@ public class DiceSprite : MonoBehaviour
     private void OnMouseUp()
     {
         isBeingDragged = false;
+        if(isInsideDropZone)
+        {
+            isDraggable = false;
+        }
     }
 
     private void OnMouseDrag()
     {
-        if (isBeingDragged)
+        if (isDraggable && isBeingDragged)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 9;
