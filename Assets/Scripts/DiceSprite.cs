@@ -6,6 +6,7 @@ public class DiceSprite : MonoBehaviour
     public List<Sprite> faceSprites;
 
     public SpriteRenderer spriteRenderer;
+    private bool isBeingDragged = false;
 
     private void Start()
     {
@@ -14,7 +15,24 @@ public class DiceSprite : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Roll();
+        //Roll();
+        isBeingDragged = true;
+    }
+
+    private void OnMouseUp()
+    {
+        isBeingDragged = false;
+    }
+
+    private void OnMouseDrag()
+    {
+        if (isBeingDragged)
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = 9;
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+            transform.position = worldPosition;
+        }
     }
 
     public int Roll()
