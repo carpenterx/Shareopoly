@@ -13,10 +13,12 @@ public class DiceSprite : MonoBehaviour
     private bool isBeingDragged = false;
     private bool isInsideDropZone = false;
 
-    private void Start()
+    private int dieValue = 0;
+
+    /*private void Start()
     {
         Roll();
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -66,6 +68,17 @@ public class DiceSprite : MonoBehaviour
         spriteRenderer.sprite = faceSprites[dieIndex];
         Quaternion randomRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
         transform.rotation = randomRotation;
-        return dieIndex + 1;
+        dieValue = dieIndex + 1;
+        return dieValue;
+    }
+
+    public int GetDieValue()
+    {
+        return dieValue;
+    }
+
+    public bool CanReroll()
+    {
+        return isDraggable;
     }
 }
