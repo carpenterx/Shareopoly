@@ -4,22 +4,22 @@ using UnityEngine;
 public class BoardDiceManager : MonoBehaviour
 {
     public List<DiceSprite> diceSprites;
-    private List<Vector3> initialPositions = new List<Vector3>();
-    private int rerolls = 2;
+    private static int extraRerolls = 2;
+    private int rerolls = extraRerolls;
 
     void Start()
     {
-        SaveInitialPositions();
+        //SaveInitialPositions();
         RollDice();
     }
 
-    private void SaveInitialPositions()
+    /*private void SaveInitialPositions()
     {
         for (int i = 0; i < diceSprites.Count; i++)
         {
             initialPositions.Add(diceSprites[i].transform.position);
         }
-    }
+    }*/
 
     public void RollDice()
     {
@@ -54,12 +54,12 @@ public class BoardDiceManager : MonoBehaviour
         return rollsList;
     }
 
-    private void ResetDice()
+    public void ResetDice()
     {
-        rerolls = 2;
+        rerolls = extraRerolls;
         for (int i = 0; i < diceSprites.Count; i++)
         {
-            diceSprites[i].transform.position = initialPositions[i];
+            diceSprites[i].ResetDie();
         }
         RollDice();
     }

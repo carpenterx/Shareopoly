@@ -32,6 +32,7 @@ public class Combination : MonoBehaviour
         {
             // calculate score based on selected combination and dice rolls
             scoreKeeper.CalculateScore(diceManager.GetDiceRolls(), combinationData.combinationName);
+            diceManager.ResetDice();
         }
         DisableCombination();
     }

@@ -15,10 +15,24 @@ public class DiceSprite : MonoBehaviour
 
     private int dieValue = 0;
 
-    /*private void Start()
+    private Vector3 startPosition;
+
+    private void Start()
     {
-        Roll();
-    }*/
+        startPosition = transform.position;
+        //Roll();
+    }
+
+    public void ResetDie()
+    {
+        transform.position = startPosition;
+
+        isDraggable = true;
+        isBeingDragged = false;
+        isInsideDropZone = false;
+
+        dieValue = 0;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
