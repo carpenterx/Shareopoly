@@ -6,7 +6,11 @@ using UnityEngine;
 public class ScoreKeeper : MonoBehaviour
 {
     public TextMesh scoreText;
+    public Reroll reroll;
+
     private int currentScore = 0;
+    private static int maxRounds = 12;
+    private int currentRound = 0;
 
     private void Start()
     {
@@ -15,7 +19,7 @@ public class ScoreKeeper : MonoBehaviour
 
     public void CalculateScore(List<int> diceRolls, string combinationName)
     {
-        //currentScore += 20;
+        currentRound++;
         switch (combinationName)
         {
             case "Ones":
@@ -57,8 +61,11 @@ public class ScoreKeeper : MonoBehaviour
             default:
                 break;
         }
-
         UpdateScore();
+        if(IsGameOver())
+        {
+            reroll.SetNewGameLabel();
+        }
     }
 
     private int ScoreRepetitions(int value, List<int> diceRolls)
@@ -172,5 +179,17 @@ public class ScoreKeeper : MonoBehaviour
     private void UpdateScore()
     {
         scoreText.text = currentScore.ToString();
+    }
+
+    public bool IsGameOver()
+    {
+        return currentRound == maxRounds;
+    }
+
+    public void ResetScore()
+    {
+        currentScore = 0;
+        currentRound = 0;
+        UpdateScore();
     }
 }

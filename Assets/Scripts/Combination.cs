@@ -42,4 +42,10 @@ public class Combination : MonoBehaviour
         backgroundSprite.color = Color.gray;
         wasUsed = true;
     }
+
+    public void EnableCombination()
+    {
+        backgroundSprite.color = Color.white;
+        wasUsed = false;
+    }
 }
