@@ -44,6 +44,16 @@ public class BoardDiceManager : MonoBehaviour
         }
     }
 
+    public List<int> GetDiceRolls()
+    {
+        List<int> rollsList = new List<int>();
+        for (int i = 0; i < diceSprites.Count; i++)
+        {
+            rollsList.Add(diceSprites[i].GetDieValue());
+        }
+        return rollsList;
+    }
+
     private void ResetDice()
     {
         rerolls = 2;

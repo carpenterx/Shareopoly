@@ -8,6 +8,10 @@ public class Combination : MonoBehaviour
     public TextMesh nameMesh;
     public List<SpriteRenderer> combinationDice;
 
+    [Space]
+    public BoardDiceManager diceManager;
+    public ScoreKeeper scoreKeeper;
+
     void Start()
     {
         if (combinationData)
@@ -18,5 +22,11 @@ public class Combination : MonoBehaviour
                 combinationDice[i].sprite = combinationData.diceSprites[i];
             }
         }
+    }
+
+    private void OnMouseDown()
+    {
+        // calculate score based on selected combination and dice rolls
+        scoreKeeper.CalculateScore(diceManager.GetDiceRolls(), combinationData.combinationName);
     }
 }
