@@ -39,6 +39,10 @@ public class BoardDiceManager : MonoBehaviour
                 {
                     diceSprites[i].Roll();
                 }
+                else
+                {
+                    diceSprites[i].Keep();
+                }
             }
             rerolls--;
         }

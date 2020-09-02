@@ -61,10 +61,10 @@ public class DiceSprite : MonoBehaviour
     private void OnMouseUp()
     {
         isBeingDragged = false;
-        if(isInsideDropZone)
+        /*if (isInsideDropZone)
         {
-            isDraggable = false;
-        }
+            //isDraggable = false;
+        }*/
     }
 
     private void OnMouseDrag()
@@ -85,14 +85,19 @@ public class DiceSprite : MonoBehaviour
         return worldPosition;
     }
 
-    public int Roll()
+    public void Roll()
     {
         int dieIndex = Random.Range(0, faceSprites.Count);
         spriteRenderer.sprite = faceSprites[dieIndex];
         Quaternion randomRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
         transform.rotation = randomRotation;
         dieValue = dieIndex + 1;
-        return dieValue;
+        //return dieValue;
+    }
+
+    public void Keep()
+    {
+        isDraggable = false;
     }
 
     public int GetDieValue()
@@ -102,6 +107,7 @@ public class DiceSprite : MonoBehaviour
 
     public bool CanReroll()
     {
-        return isDraggable;
+        // the dice can reroll if it is outside of the keep zone
+        return !isInsideDropZone;
     }
 }
