@@ -16,6 +16,7 @@ public class DiceSprite : MonoBehaviour
     private int dieValue = 0;
 
     private Vector3 startPosition;
+    private Vector3 previousMousePosition;
 
     private void Start()
     {
@@ -54,6 +55,7 @@ public class DiceSprite : MonoBehaviour
     {
         //Roll();
         isBeingDragged = true;
+        previousMousePosition = GetWorldMousePosition();
     }
 
     private void OnMouseUp()
@@ -69,11 +71,18 @@ public class DiceSprite : MonoBehaviour
     {
         if (isDraggable && isBeingDragged)
         {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 9;
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-            transform.position = worldPosition;
+            Vector3 currentMousePosition = GetWorldMousePosition();
+            transform.position += currentMousePosition - previousMousePosition;
+            previousMousePosition = currentMousePosition;
         }
+    }
+
+    private Vector3 GetWorldMousePosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 9;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+        return worldPosition;
     }
 
     public int Roll()
