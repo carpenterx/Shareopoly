@@ -512,6 +512,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Die5
       objectReference: {fileID: 0}
+    - target: {fileID: 8020622598949543159, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459857, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
         type: 3}
       propertyPath: m_Sprite
@@ -1109,6 +1119,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Die1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622598949543159, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459857, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1c92dea25771d4da0fc8f639b65e23, type: 3}
@@ -1773,6 +1808,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Die2
       objectReference: {fileID: 0}
+    - target: {fileID: 8020622598949543159, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459857, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
         type: 3}
       propertyPath: m_Sprite
@@ -2395,6 +2440,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Die4
       objectReference: {fileID: 0}
+    - target: {fileID: 8020622598949543159, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459857, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
         type: 3}
       propertyPath: m_Sprite
@@ -2516,6 +2571,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Die3
       objectReference: {fileID: 0}
+    - target: {fileID: 8020622598949543159, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020622599266459857, guid: ae1c92dea25771d4da0fc8f639b65e23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8020622599266459863, guid: ae1c92dea25771d4da0fc8f639b65e23,
         type: 3}
       propertyPath: m_Sprite
@@ -2577,7 +2642,7 @@ GameObject:
   - component: {fileID: 790806690450955360}
   - component: {fileID: 790806690450955366}
   - component: {fileID: 790806690450955361}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Text holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790806690680419076}
   - component: {fileID: 790806690680419080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: KeepZone
   m_TagString: DropZone
   m_Icon: {fileID: 0}
@@ -2692,7 +2757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790806691304475807}
   - component: {fileID: 790806691304475806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
