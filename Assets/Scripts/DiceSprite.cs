@@ -56,6 +56,29 @@ public class DiceSprite : MonoBehaviour
         //Roll();
         isBeingDragged = true;
         previousMousePosition = GetWorldMousePosition();
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                DecrementValue();
+            }
+            else
+            {
+                Roll();
+            }
+        }
+    }
+
+    private void DecrementValue()
+    {
+        dieValue--;
+        if(dieValue == 0)
+        {
+            dieValue = 6;
+        }
+        spriteRenderer.sprite = faceSprites[dieValue-1];
+        Quaternion randomRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+        transform.rotation = randomRotation;
     }
 
     private void OnMouseUp()
